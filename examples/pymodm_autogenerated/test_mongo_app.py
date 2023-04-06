@@ -9,7 +9,7 @@ import isodate
 import pymodm
 import pymongo
 from fhirbug.config import settings, import_models
-from .generate_examples import generate_examples, clean_examples
+from generate_examples import generate_examples, clean_examples
 
 GENERATE_FIXTURES = int(os.environ.get("GENERATE_FIXTURES", True))
 
