@@ -11,7 +11,7 @@ RUN mv settings_prod.py settings.py
 
 CMD python tools/download_examples.py && \
     python generate_examples.py -w && \
-    gunicorn --workers=4 --bind 0.0.0.0:5000  flask_app:app
+    gunicorn --workers=4 --bind 0.0.0.0:5001  flask_app:app
 
 # Uncomment this line to skip example generation
 # CMD [ "python", "./flask_app.py" ]

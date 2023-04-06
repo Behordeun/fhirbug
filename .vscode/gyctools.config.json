@@ -1,0 +1,103 @@
+{
+    "$schema": "gyctools.config.schema.json",
+    "projectName": "patella",
+    "projectPath": "patella",
+    "enabled": true,    
+    "openFileWhenComplete": false,
+    "templatePath":"",
+    "overrideExists":true,
+    "dataBaseList": [
+        {
+            "dataBaseName": "patella",
+            "tableNamePrefix": "TB_",
+            "templateList": [
+                {
+                    "templateName": "/java/object.njk",
+                    "outFileType": ".java",
+                    "outPath": "/patella/java/",
+                    "enabled": true
+                },
+                {
+                    "templateName": "/java/mybatis_dao.njk",
+                    "outFileType": "DAO.java",
+                    "outPath": "/patella/java/",
+                    "enabled": true
+                },
+                {
+                    "templateName": "/java/mybatis_dao_map.njk",
+                    "outFileType": ".xml",
+                    "outPath": "/patella/resources/mybatis/",
+                    "enabled": true,
+                    "language":"java"
+                },
+                {
+                    "templateName": "/typescript/interface.njk",
+                    "outFileType": ".ts",
+                    "outPath": "/patella/typescript/",
+                    "enabled": true,
+                    "customsTypeInterpreterConfig": {
+                        "int": {
+                            "result": "number"
+                        },
+                        "another_ts_db_type": {
+                            "result": "your_language_ts_type_name",
+                            "importTypeName": "import {vscode} from 'vscode'"
+                        },
+                        "default": {
+                            "result": "string"
+                        }
+                    }
+                },
+                {
+                    "templateName": "/csharp/object.njk",
+                    "outFileType": ".cs",
+                    "outPath": "/patella/csharp/",
+                    "enabled": true,
+                    "customsTypeInterpreterConfig": {
+                        "int": {
+                            "result": "Int32",
+                            "importTypeName": "System"
+                        },
+                        "datetime": {
+                            "result": "Date",
+                            "importTypeName": "System"
+                        },
+                        "another_ts_db_type": {
+                            "result": "your_language_ts_type_name",
+                            "importTypeName": "System.Date"
+                        },
+                        "default": {
+                            "result": "String",
+                            "importTypeName": "System"
+                        }
+                    }
+                }
+            ],
+            "customsAttributes": {
+                "author": "leechzhao3@hotmail.com",
+                "modelPackageName": "com.patella.model",
+                "readerPackageName": "com.patella.reader",
+                "writerPackageName": "com.patella.writer",
+                "servicePackageName": "com.patella.service",
+                "serviceImplPackageName": "com.patella.service.impl",
+                "cSharpObjectNameSpace": "patella"
+            },
+            "customsTypeInterpreterConfig": {
+                "another_db_type": {
+                    "result": "your_language_type_name",
+                    "importTypeName": "import {vscode} from 'vscode'"
+                },
+                "default": {
+                    "result": "string"
+                }
+            }
+        }
+    ],
+    "baseModelProperties": [
+        "id",
+        "dr",
+        "dataVersion",
+        "createTime",
+        "updateTime"
+    ]
+}
